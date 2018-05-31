@@ -1,0 +1,4 @@
+.wpp-thousands-separator,.wpp-decimal-point {
+    min-width: 16em;
+    display: inline-block;
+}

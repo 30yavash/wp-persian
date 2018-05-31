@@ -1,0 +1,313 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPPersian\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 19:42+0430\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Siavash Salemi <30yavash@gmail.com>\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-Bookmarks: -1,-1,32,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/class-wp-persian.php:166
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: includes/class-wpp-hooks.php:192
+msgid "Show all dates"
+msgstr "نمایش همه‌ی تاریخ‌ها"
+
+#: includes/class-wpp-options.php:40 includes/class-wpp-options.php:79
+msgid "Administrator Panel"
+msgstr "بخش مدیریت سایت"
+
+#: includes/class-wpp-options.php:41
+msgid "Change language and calendar in administrator panel."
+msgstr "تغییر زبان و تاریخ در بخش مدیریت سایت."
+
+#: includes/class-wpp-options.php:44 includes/class-wpp-options.php:170
+#: includes/class-wpp-options.php:525
+msgid "Frontpage"
+msgstr "بخش نمایشی سایت"
+
+#: includes/class-wpp-options.php:45
+msgid "Change language , calendar and numbers in frontpage."
+msgstr "تغییر زبان، تاریخ و اعداد در نمای کاربری سایت."
+
+#: includes/class-wpp-options.php:48 includes/class-wpp-options.php:521
+msgid "Persian"
+msgstr "فارسی"
+
+#: includes/class-wpp-options.php:68
+msgid "For more information:"
+msgstr "حهت اطلاعات بیشتر:"
+
+#: includes/class-wpp-options.php:69
+msgid "Support"
+msgstr "پشتیبانی"
+
+#: includes/class-wpp-options.php:86 includes/class-wpp-options.php:177
+msgid "Language"
+msgstr "زبان"
+
+#: includes/class-wpp-options.php:96
+msgid "Context"
+msgstr "تشخیص نوشتار"
+
+#: includes/class-wpp-options.php:107 includes/class-wpp-options.php:187
+msgid "Date & Time"
+msgstr "تاریخ و ساعت"
+
+#: includes/class-wpp-options.php:117 includes/class-wpp-options.php:197
+#: includes/class-wpp-options.php:363 includes/class-wpp-options.php:444
+msgid "Numbers"
+msgstr "عددها"
+
+#: includes/class-wpp-options.php:127 includes/class-wpp-options.php:207
+msgid "Letters"
+msgstr "حروف"
+
+#: includes/class-wpp-options.php:137
+msgid "Editor"
+msgstr "ویرایشگر"
+
+#: includes/class-wpp-options.php:217
+msgid "Permalink"
+msgstr "پیوندهای یکتا"
+
+#: includes/class-wpp-options.php:258
+msgid ""
+"Use Context Feature in administrator panel to use RTL direction in LTR "
+"Languages"
+msgstr "تشخیص خودکار جهت نوشتار، براساس متن ورودی"
+
+#: includes/class-wpp-options.php:268
+msgid "Convert dates in wordpress administrator panel"
+msgstr "تبدیل تاریخ در بخش مدیریت سایت"
+
+#: includes/class-wpp-options.php:278
+msgid "Use Bidirectional button in visual editor"
+msgstr "فعال سازی دکمه های راست به چپ و چپ به راست در ویرایشگر"
+
+#: includes/class-wpp-options.php:282
+msgid "Use RTL style for visual editor"
+msgstr "استفاده از استایل راست به چپ برای ویرایشگر"
+
+#: includes/class-wpp-options.php:347
+msgid "Convert dates in wordpress frontpage"
+msgstr "تبدیل تاریخ در بخش نمایشی وردپرس"
+
+#: includes/class-wpp-options.php:356
+msgid "Convert dates in permalinks"
+msgstr "تبدیل تاریخ در پیوندهای یکتا"
+
+#: includes/class-wpp-options.php:365 includes/class-wpp-options.php:446
+msgid "Decimal symbol:"
+msgstr "نمایشگر اعشار:"
+
+#: includes/class-wpp-options.php:374 includes/class-wpp-options.php:456
+msgid "Thousand separator symbol:"
+msgstr "جداساز هزارگان:"
+
+#: includes/class-wpp-options.php:386
+msgid "Change numbers to Farsi in Page Title"
+msgstr "تغییر عددها به فارسی در عنوان صفحه"
+
+#: includes/class-wpp-options.php:391
+msgid "Change numbers to Farsi in Post Title"
+msgstr "تغییر  عددها به فارسی در عنوان نوشته‌ها"
+
+#: includes/class-wpp-options.php:396
+msgid "Change numbers to Farsi in Post excerpt"
+msgstr "تغییر عددها به فارسی در خلاصه نوشته‌ها"
+
+#: includes/class-wpp-options.php:401
+msgid "Change numbers to Farsi in Post Content"
+msgstr "تغییر عددها به فارسی در متن نوشته‌ها"
+
+#: includes/class-wpp-options.php:406
+msgid "Change numbers to Farsi in Comments"
+msgstr "تغییر عددها به فارسی در دیدگاه‌ها"
+
+#: includes/class-wpp-options.php:411
+msgid "Change numbers to Farsi in Comments count"
+msgstr "تغییر  شمارشگر دیدگاه‌ها، به فارسی"
+
+#: includes/class-wpp-options.php:416
+msgid "Change numbers to Farsi in Categories"
+msgstr "تغییر عددها به فارسی در دسته‌ها"
+
+#: includes/class-wpp-options.php:421 includes/class-wpp-options.php:498
+msgid "Change numbers to Farsi in Dates"
+msgstr "تغییر عددها به فارسی در تاریخ"
+
+#: includes/class-wpp-options.php:425 includes/class-wpp-options.php:502
+msgid "Change other numbers to Farsi"
+msgstr "تغییر سایر عددها به فارسی"
+
+#: includes/class-wpp-options.php:436 includes/class-wpp-options.php:512
+msgid "Change arabic letters to farsi"
+msgstr "تغییر حروف عربی به فارسی"
+
+#: includes/class-wpp-options.php:468
+msgid "Change &amp; Save numbers to Farsi in Post Title"
+msgstr "تغییر و ذخیره عددها به فارسی در عنوان نوشته‌ها"
+
+#: includes/class-wpp-options.php:473
+msgid "Change &amp; Save numbers to Farsi in Post excerpt"
+msgstr "تغییر و ذخیره عددها به فارسی در خلاصه نوشته‌ها"
+
+#: includes/class-wpp-options.php:478
+msgid "Change &amp; Save numbers to Farsi in Post Content"
+msgstr "تغییر و ذخیره عددها به فارسی در متن نوشته‌ها"
+
+#: includes/class-wpp-options.php:490
+msgid "Change &amp; Save numbers to Farsi in Categories"
+msgstr "تغییر و ذخیره عددها به فارسی در دسته‌ها"
+
+#: includes/class-wpp-options.php:494
+msgid "Change &amp; Save numbers to Farsi in Comments"
+msgstr "تغییر و ذخیره عددها به فارسی در دیدگاه‌ها"
+
+#: includes/class-wpp-options.php:527
+msgid "Adminpanel"
+msgstr "نمای مدیریت"
+
+#: includes/general-template.php:152
+#, php-format
+msgid "%1$s %2$s"
+msgstr ""
+
+#: includes/widgets/class-wpp-widget-jarchive.php:19
+msgid "Jalali Archive"
+msgstr "بایگانی شمسی"
+
+#: includes/widgets/class-wpp-widget-jarchive.php:20
+msgid "A jalali monthly archive of your site’s posts"
+msgstr "بایگانی ماهانه از نوشته‌های سایت شما"
+
+#: includes/widgets/class-wpp-widget-jarchive.php:34
+msgid "Archives"
+msgstr "بایگانی‌ها"
+
+#: includes/widgets/class-wpp-widget-jarchive.php:89
+#: includes/widgets/class-wpp-widget-jcalendar.php:99
+msgid "Title:"
+msgstr "نام:"
+
+#: includes/widgets/class-wpp-widget-jarchive.php:96
+msgid "Display as dropdown"
+msgstr "نمایش به‌عنوان فهرست بازشو"
+
+#: includes/widgets/class-wpp-widget-jarchive.php:100
+msgid "Show post counts"
+msgstr "نمایش تعداد نوشته‌ها"
+
+#: includes/widgets/class-wpp-widget-jcalendar.php:16
+msgid "Jalali Calendar"
+msgstr "تقویم شمسی"
+
+#: includes/widgets/class-wpp-widget-jcalendar.php:17
+msgid "A jalali calendar of your site’s posts"
+msgstr "تقویم نوشته‌های سایت شما"
+
+#: includes/widgets/class-wpp-widget-jcalendar.php:96
+msgid "title"
+msgstr "نام"
+
+#~ msgid "No translates avaliable."
+#~ msgstr "هیچ ترجمه‌ای یافت نشد."
+
+#~ msgid "Translate"
+#~ msgstr "ترجمه"
+
+#~ msgid "Translator"
+#~ msgstr "مترجم"
+
+#~ msgid "Text"
+#~ msgstr "متن"
+
+#~ msgid "Translation"
+#~ msgstr "ترجمه"
+
+#~ msgid "Domain"
+#~ msgstr "دامنه"
+
+#~ msgid "Add Translate"
+#~ msgstr "ثبت ترجمه"
+
+#~ msgid "Convert other numbers"
+#~ msgstr "تبدیل سایر عددها"
+
+#~ msgid "Convert numbers in Dates"
+#~ msgstr "تبدیل عدد در تاریخ‌ها"
+
+#~ msgid "Convert &amp; Save numbers in Comments"
+#~ msgstr "تبدیل و ذخیره اعداد در دیدگاه‌ها"
+
+#~ msgid "Convert &amp; Save numbers in Categories"
+#~ msgstr "تبدیل و ذخیره اعداد در دسته‌ها"
+
+#~ msgid "Convert &amp; Save numbers in Post Content"
+#~ msgstr "تبدیل و ذخیره عددها در متن نوشته‌ها"
+
+#~ msgid "Convert &amp; Save numbers in Post excerpt"
+#~ msgstr "تبدیل و ذخیره عددها در خلاصه نوشته‌ها"
+
+#~ msgid "Convert &amp; Save numbers in Post Title"
+#~ msgstr "تبدیل و ذخیره عددها در عنوان نوشته‌ها"
+
+#~ msgid "Convert numbers in Categories"
+#~ msgstr "تبدیل عدد در دسته‌ها"
+
+#~ msgid "Convert Comments count"
+#~ msgstr "تبدیل عدد در تعداد دیدگاه‌ها"
+
+#~ msgid "Complex Style"
+#~ msgstr "نمای مختلط"
+
+#~ msgid "Use Complex style sheet in administrator panel"
+#~ msgstr "استفاده از استایل متن مختلط در بخش مدیریت"
+
+#~ msgid "English"
+#~ msgstr "انگلیسی"
+
+#~ msgid "Translates"
+#~ msgstr "ترجمه‌ها"
+
+#~ msgid "View posts for %1$s %2$s"
+#~ msgstr "نمایش نوشته‌های %1$s %2$s"
+
+#~ msgid "Hour:"
+#~ msgstr "ساعت:"
+
+#~ msgid "Minutes"
+#~ msgstr "دقیقه"
+
+#~ msgid "WP Persian"
+#~ msgstr "وردپرس فارسی"
+
+#~ msgid "Admin Panel"
+#~ msgstr "بخش مدیریت سایت"
+
+#~ msgid "Convert dates in wordpress administrator panel."
+#~ msgstr "تاریخ های بخش مدیریت سایت را به هجری شمسی تبدیل کن."
+
+#~ msgid "Convert dates in wordpress frontpage."
+#~ msgstr "تاریخ های بخش نمایشی سایت را به هجری شمسی تبدیل کن."
+
+#~ msgid "Convert permalinks."
+#~ msgstr "تبدیل خودکار تاریخ در نشانی نوشته ها."
+
+#, fuzzy
+#~ msgid "wp-persian"
+#~ msgstr "فارسی"
