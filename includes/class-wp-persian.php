@@ -221,7 +221,7 @@ class WP_Persian {
         //add_action( 'edit_form_top', array( 'WPP_Hooks', 'wpp_edit_form_top' ) );
 		add_action( 'save_post', array( 'WPP_Hooks', 'wpp_save_post' ), 10, 2 );
 
-        add_action( 'woocommerce_before_save_order_items', array( 'WPP_Hooks', 'wpp_woocommerce_before_save_order_items' ), 10, 2 );
+        //add_action( 'woocommerce_before_save_order_items', array( 'WPP_Hooks', 'wpp_woocommerce_before_save_order_items' ), 10, 2 );
 
 
     }
@@ -297,26 +297,10 @@ class WP_Persian {
 
 	public function wpp_admin_notice()
     {
-        /*
-        if ( isset($_GET['error']) && $_GET['error']=='1') {
-
-            echo '<div class="notice notice-error is-dismissible">'
-                . _e('Please deactive wp-parsidate plugin!', 'wp-persian')
-                . '</div>';
-        }
-        */
-
     }
 
 
 	public function activate() {
-	    /*
-	    if(is_plugin_active('wp-parsidate/wp-parsidate.php')) {
-            wp_redirect( self_admin_url( 'plugins.php?error=1' ) );
-            exit();
-        }
-	    */
-
 
 		update_option( 'WPLANG', 'en_US' );
 

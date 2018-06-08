@@ -12,11 +12,10 @@ jQuery(document).ready(function() {
 
     old_textbox.removeAttr('pattern');
     old_textbox.removeAttr('class');
-    //old_textbox.css('display','none');
+    old_textbox.css('display','none');
     old_textbox.removeAttr('pattern');
 
     var jdf = new jDateFunctions();
-    //console.log(jdf.getPCalendarDate(jdf.getJulianDay(new Date(old_textbox.val()))).toString("YYYY-0M-0D"));
 
     new_textbox.val(jdf.getPCalendarDate(jdf.getJulianDay(new Date(old_textbox.val()))).toString("YYYY-0M-0D"));
 

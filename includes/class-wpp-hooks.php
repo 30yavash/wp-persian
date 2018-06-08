@@ -518,8 +518,6 @@ class WPP_Hooks{
 	    $items['order_date_hour']=wpp_numbers_to_english($items['order_date_hour']);
         $items['order_date_minute']=wpp_numbers_to_english($items['order_date_minute']);
         $items['order_date_second']=wpp_numbers_to_english($items['order_date_second']);
-        //print_r($items);
-
         //return $items;
     }
 }
