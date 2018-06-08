@@ -24,7 +24,14 @@ function wpp_jdate( $format , $time  , $tr_num='') {
     }elseif(is_numeric($time)){
         $timestamp = intval($time);
     } else {
+        //echo '[ ';
+        //echo $time,' | ';
+        //$time = str_replace(array('F', 'j', 'Y','M' ,'g','i','a',),'',$time);
+        //echo $time;
+        //echo ' ]';
         $timestamp = strtotime($time);
+        //echo '[ ',$timestamp,' , ',$time,'] ';
+        //echo '+',$timestamp,'+';
     }
 
     if ( empty( $tr_num ) && is_admin() && get_option( 'wpp_adminpanel_numbers_date_i18n' ) ) {

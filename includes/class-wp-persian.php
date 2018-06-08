@@ -19,7 +19,7 @@ class WP_Persian {
 	public $frontpage_locale;
 	public $adminpanel_locale;
 	public $user_locale;
-	public $version="3.1.0";
+	public $version="3.2.0";
 
 	public static function getInstance()
 	{
@@ -221,7 +221,10 @@ class WP_Persian {
         //add_action( 'edit_form_top', array( 'WPP_Hooks', 'wpp_edit_form_top' ) );
 		add_action( 'save_post', array( 'WPP_Hooks', 'wpp_save_post' ), 10, 2 );
 
-	}
+        add_action( 'woocommerce_before_save_order_items', array( 'WPP_Hooks', 'wpp_woocommerce_before_save_order_items' ), 10, 2 );
+
+
+    }
 
 	private function frontpage_hooks() {
 

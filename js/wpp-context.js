@@ -1,5 +1,9 @@
 jQuery(document).ready(function() {
 
+    //jQuery("input[name='order_date']").removeAttr('pattern');
+    //jQuery("input[name='order_date_hour']").removeAttr('pattern');
+    //jQuery("input[name='order_date_minute']").removeAttr('pattern');
+
     function isUnicode(str) {
         var letters = [];
         for (var i = 0; i <= str.length; i++) {

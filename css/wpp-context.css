@@ -1,3 +1,7 @@
+input,textarea{
+	unicode-bidi: embed;
+}
+
 li#wp-admin-bar-site-name a.ab-item, li#wp-admin-bar-my-account a, li#wp-admin-bar-user-info span, #wp-admin-bar-my-sites-list a.ab-item{
 font-family:tahoma !important;
 }

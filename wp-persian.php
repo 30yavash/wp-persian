@@ -4,8 +4,8 @@
  * @wordpress-plugin
  * Plugin Name:       WP-Persian
  * Plugin URI:        https://wordpress.org/plugins/wp-persian/
- * Description:       WP-Persian is a fast and powerful plugin for support jalali date and persian language in wordpress and all other standard plugins.
- * Version:           3.1.1
+ * Description:       WP-Persian is a fast and powerful plugin for support jalali date and persian language in wordpress and woocommerce and all other standard plugins.
+ * Version:           3.2.0
  * Author:            Siavash Salemi
  * Author URI:        http://www.30yavash.ir
  * License:           GPL2
@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) exit;
 
 //define('WPPERSIAN_ID', 'wppersian');
 define('WPPERSIAN_NICK', 'WP Persian');
-//define('WPPERSIAN_VER', '3.1.0');
+//define('WPPERSIAN_VER', '3.2.0');
 
 /** @define "WPP_DIR" "./" */
 define('WPP_DIR', plugin_dir_path(__FILE__));

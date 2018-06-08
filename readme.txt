@@ -1,10 +1,10 @@
 === WP-Persian ===
 Contributors: salemi
 Donate link: https://zarinp.al/22741
-Tags: persian, farsi, jalali, date, calendar, iran, ltr, rtl, direction, shamsi, فارسی, تقویم, شمسی, هجری شمسی, افزونه, جلالی, میلادی, پارسی, ایران, پیشرفته
+Tags: persian, farsi, jalali, date, calendar, iran, ltr, rtl, woocommerce, shamsi, فارسی, تقویم, شمسی, هجری شمسی, افزونه, جلالی, میلادی, پارسی, ایران, ووکامرس, فروشگاه
 Requires at least: 4.0
 Tested up to: 4.9.6
-Stable tag: 3.1.1
+Stable tag: 3.2.0
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,7 @@ Related Links:
 
 
 = Features =
+* Jalali DatePicker for Woocommerce
 * Full posts and comments dates conversion to jalali.
 * Customizable through specific Wordpress admin page.
 * Jalali timestamp edit in new post and new page sections.
@@ -51,6 +52,9 @@ Related Links:
 3. Use the Settings->Persian screen to configure the plugin
 
 == Changelog ==
+= 3.2.0 (June 9th,2018)=
+* (NEW) jalali datepicker for woocommerce
+
 = 3.1.0 (May 21th,2018) =
 * (NEW) jalali date in media library page
 * (FIX) bug fix in activate plugin
