@@ -26,6 +26,7 @@ class WPP_Hooks{
         return $locale;
     }
 
+
     public static function wpp_date_i18n( $j, $req_format, $i, $gmt ) {
         $num_lang = 'en';
         if ( is_admin() && get_option( 'wpp_adminpanel_numbers_date_i18n' ) ) {
@@ -35,6 +36,8 @@ class WPP_Hooks{
             $num_lang = 'fa';
         }
 
+        //error_log('j='.$j.', format='.$req_format.', i='.$i.', gmt='.$gmt.', timezone='.date_default_timezone_get());
+
         if (class_exists( 'WooCommerce' ) && function_exists('debug_backtrace')) {
             $callers = debug_backtrace();
                 if (
@@ -42,14 +45,14 @@ class WPP_Hooks{
                     (isset($callers[4]['class'])) && ($callers[4]['class'] == 'WC_Meta_Box_Order_Data') ||
                     (isset($callers[7]['class'])) && ($callers[7]['class'] == 'WC_Meta_Box_Product_Data')
                 ) {
+
                     return $j;
                 }
         }
 
-
-        $j = wpp_jdate( $req_format, $i,  $num_lang );
-
-        return $j;
+        return wpp_jdate( $req_format, $i,  $num_lang );
+        //$j = wpp_jdate( $req_format, $i,  $num_lang );
+        //return $j;
     }
 
 
@@ -508,7 +511,8 @@ class WPP_Hooks{
 
 
     public  static function wpp_woocommerce_before_save_order_items($order_id, $items) {
-
+        //date_default_timezone_set( 'UTC' );
+/*
         $items['order_date']=wpp_numbers_to_english($items['order_date']);
         list( $jyear, $jmonth, $jday ) = explode( '-', $items['order_date'] );
         if(intval($jyear)<1700) {
@@ -519,6 +523,7 @@ class WPP_Hooks{
         $items['order_date_minute']=wpp_numbers_to_english($items['order_date_minute']);
         $items['order_date_second']=wpp_numbers_to_english($items['order_date_second']);
         //return $items;
+*/
     }
 }
 

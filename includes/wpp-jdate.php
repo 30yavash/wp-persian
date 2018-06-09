@@ -24,14 +24,7 @@ function wpp_jdate( $format , $time  , $tr_num='') {
     }elseif(is_numeric($time)){
         $timestamp = intval($time);
     } else {
-        //echo '[ ';
-        //echo $time,' | ';
-        //$time = str_replace(array('F', 'j', 'Y','M' ,'g','i','a',),'',$time);
-        //echo $time;
-        //echo ' ]';
         $timestamp = strtotime($time);
-        //echo '[ ',$timestamp,' , ',$time,'] ';
-        //echo '+',$timestamp,'+';
     }
 
     if ( empty( $tr_num ) && is_admin() && get_option( 'wpp_adminpanel_numbers_date_i18n' ) ) {
@@ -43,8 +36,11 @@ function wpp_jdate( $format , $time  , $tr_num='') {
     } elseif ( empty( $tr_num ) && ! is_admin() ) {
         $tr_num = 'en';
     }
-    $time_zone = get_option( 'timezone_string' );
-
+    //$time_zone = get_option( 'timezone_string' );
+    $time_zone = get_option( 'gmt_offset' );
+    //error_log('timezone='.$time_zone);
+    //$time_zone = 'UTC';
+    //$tr_num='en';
     return jdate( $format, $timestamp, '', $time_zone, $tr_num );
 }
 

@@ -189,7 +189,7 @@ class WP_Persian {
 
         if ( get_option( 'wpp_adminpanel_convert_date' ) ) {
 			add_filter( 'date_formats', array( 'WPP_Hooks', 'wpp_date_formats' ), 10, 1 );
-			add_filter( "date_i18n", array( 'WPP_Hooks', 'wpp_date_i18n' ), 10, 4 );
+            add_filter( "date_i18n", array( 'WPP_Hooks', 'wpp_date_i18n' ), 10, 4 );
 			add_action( 'restrict_manage_posts', array( 'WPP_Hooks', 'wpp_restrict_manage_posts' ) );
             add_filter( 'disable_months_dropdown' , array( 'WPP_Hooks', 'wpp_disable_months_dropdown' ) , 10 , 2 );
 			add_action( 'load-edit.php', array( 'WPP_Hooks', 'wpp_load_editphp' ), 10, 0 );
@@ -221,7 +221,7 @@ class WP_Persian {
         //add_action( 'edit_form_top', array( 'WPP_Hooks', 'wpp_edit_form_top' ) );
 		add_action( 'save_post', array( 'WPP_Hooks', 'wpp_save_post' ), 10, 2 );
 
-        //add_action( 'woocommerce_before_save_order_items', array( 'WPP_Hooks', 'wpp_woocommerce_before_save_order_items' ), 10, 2 );
+        add_action( 'woocommerce_before_save_order_items', array( 'WPP_Hooks', 'wpp_woocommerce_before_save_order_items' ), 10, 2 );
 
 
     }
