@@ -52,7 +52,7 @@ add_filter( 'wpp_disable_jalali_date', 'wcp_disable_jdate' , 10, 1 );
 function wcp_admin_enqueue_scripts()
 {
 
-    if (class_exists('WooCommerce') && get_option( 'wpp_adminpanel_datepicker' )) {
+    if (class_exists('WooCommerce') && get_option( 'wpp_adminpanel_datepicker' ) && $_REQUEST['page'] != 'revslider') {
         wp_enqueue_script('wcp-order', WCP_URL . 'assets/js/wc-persian.js');
         wp_enqueue_style('wc-persian', WCP_URL . 'assets/css/wc-persian.css');
     }

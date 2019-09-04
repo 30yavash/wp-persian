@@ -171,7 +171,7 @@ class WPP_Hooks{
         //wp_enqueue_script('wpp-wordpress5', WPP_URL . 'assets/js/wordpress5.js');
 
 
-        if(get_option( 'wpp_adminpanel_datepicker' )) {
+        if(get_option( 'wpp_adminpanel_datepicker' ) && $_REQUEST['page'] != 'revslider') {
             wp_enqueue_style('wpp-persian-datepicker', WPP_URL . 'assets/css/persianDatepicker-default.css');
             //wp_enqueue_script('wpp-persian-datepicker', WPP_URL . 'assets/js/persianDatepicker.min.js');
             wp_enqueue_script('wpp-persian-datepicker', WPP_URL . 'assets/js/persianDatepicker.js');
@@ -446,7 +446,7 @@ class WPP_Hooks{
 	}
 
 
-	public static function wpp_load_options_general() 
+	public static function wpp_load_options_general()
 	{
 		if(get_option('wpp_adminpanel_convert_date')==false && get_option('wpp_frontpage_convert_date'))
 			add_filter("date_i18n", array('WPP_Hooks','wpp_date_i18n'), 10, 4 );
