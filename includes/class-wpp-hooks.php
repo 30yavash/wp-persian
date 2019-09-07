@@ -36,18 +36,10 @@ class WPP_Hooks{
             $num_lang = 'fa';
         }
 
-        //error_log('j='.$j.', format='.$req_format.', i='.$i.', gmt='.$gmt.', timezone='.date_default_timezone_get());
-
-        if (class_exists( 'WooCommerce' ) && function_exists('debug_backtrace')) {
+        if (function_exists('debug_backtrace')) {
             $callers = debug_backtrace();
-                if (
-                    (isset($callers[6]['class'])) && ($callers[6]['class'] == 'WC_Meta_Box_Order_Data') ||
-                    (isset($callers[4]['class'])) && ($callers[4]['class'] == 'WC_Meta_Box_Order_Data') ||
-                    (isset($callers[7]['class'])) && ($callers[7]['class'] == 'WC_Meta_Box_Product_Data')
-                ) {
-
-                    return $j;
-                }
+            $disable_jdate = apply_filters("wpp_disable_jalali_date", $callers);
+            if($disable_jdate===true)return $j;
         }
 
         return wpp_jdate( $req_format, $i,  $num_lang );
@@ -105,7 +97,8 @@ class WPP_Hooks{
 		if ( strpos($permalink, '%category%') !== false ) {
 			$cats = get_the_category($post->ID);
 			if ( $cats )
-				usort($cats, '_usort_terms_by_ID'); // order by ID
+                usort($cats, 'wp_list_sort'); // order by ID
+				//usort($cats, '_usort_terms_by_ID');
 			$category = $cats[0]->slug;
 			if ( $parent=$cats[0]->category_parent )
 				$category = get_category_parents($parent, FALSE, '/', TRUE) . $category;
@@ -158,7 +151,7 @@ class WPP_Hooks{
 	}
 
 	public static function wpp_mce_css($stylesheets) {
-        $stylesheets.=','.WPP_URL. "css/tinymce.css";
+        $stylesheets.=','.WPP_URL. "assets/css/tinymce.css";
 		return $stylesheets;
 	}
 
@@ -168,21 +161,41 @@ class WPP_Hooks{
     public static function wpp_admin_enqueue_scripts()
     {
         if (get_option('wpp_adminpanel_context')) {
-            wp_enqueue_style('wpp-context', WPP_URL . 'css/wpp-context.css');
-            wp_enqueue_script('wpp-context', WPP_URL . 'js/wpp-context.js');
+            wp_enqueue_style('wpp-context', WPP_URL . 'assets/css/wpp-context.css');
+            wp_enqueue_script('wpp-context', WPP_URL . 'assets/js/wpp-context.js');
         }
-        wp_enqueue_style('wp-persian', WPP_URL . 'css/wp-persian.css');
-        wp_enqueue_script('wpp-jalali', WPP_URL . 'js/wpp-jalali.js');
+        wp_enqueue_style('wp-persian', WPP_URL . 'assets/css/wp-persian.css');
+        wp_enqueue_script('wpp-jalali', WPP_URL . 'assets/js/wpp-jalali.js');
 
-        wp_enqueue_script('wp-persian', WPP_URL . 'js/wp-persian.js');
+        wp_enqueue_script('wp-persian', WPP_URL . 'assets/js/wp-persian.js');
+        //wp_enqueue_script('wpp-wordpress5', WPP_URL . 'assets/js/wordpress5.js');
 
-        if (class_exists('WooCommerce')) {
+
+        if(get_option( 'wpp_adminpanel_datepicker' ) && $_REQUEST['page'] != 'revslider') {
             wp_enqueue_style('wpp-persian-datepicker', WPP_URL . 'assets/css/persianDatepicker-default.css');
-            wp_enqueue_script('wpp-persian-datepicker', WPP_URL . 'assets/js/persianDatepicker.min.js');
-            wp_enqueue_script('wpp-woocommerce', WPP_URL . 'assets/js/wpp-woocommerce.js');
+            //wp_enqueue_script('wpp-persian-datepicker', WPP_URL . 'assets/js/persianDatepicker.min.js');
+            wp_enqueue_script('wpp-persian-datepicker', WPP_URL . 'assets/js/persianDatepicker.js');
         }
+
+
+        wp_enqueue_style('wpp-fonts', WPP_URL . 'assets/css/fonts.css');
+        add_action('admin_head', array('WPP_Hooks','DynamicStyle'));
+
     }
 
+    public static function DynamicStyle()
+    {
+        ob_start();
+        include_once( WPP_DIR . 'assets/css/dynamic-css.php' );
+        $code = ob_get_contents();
+        ob_end_clean();
+        // Remove Comments
+        $code = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $code );
+        // Remove tabs, spaces, newlines, etc.
+        $code = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), '', $code );
+        echo '<style rel="stylesheet" type="text/css" title="wpp-dynamic-css"  media="all">' . $code . '</style>';
+
+    }
 
     public static function wpp_disable_months_dropdown( $false , $post_type ) {
         $disable_months_dropdown = $false;
@@ -238,16 +251,18 @@ class WPP_Hooks{
     public static function wpp_media_library_months_with_files()
     {
         global $wpdb,$wp_locale;
+
         for ($i=1;$i<=12;$i++) {
             $wp_locale->month[str_pad(strval($i),2,'0',STR_PAD_LEFT)] = wpp_jmonth_name($i);
+            $wp_locale->month_abbrev[wpp_jmonth_name($i)] = wpp_jmonth_name($i);
         }
 
-            $months = $wpdb->get_results( $wpdb->prepare( "
+
+        $months = $wpdb->get_results( $wpdb->prepare( "
 			SELECT DISTINCT YEAR( post_date ) AS year, MONTH( post_date ) AS month, DAY( post_date ) as day
 			FROM $wpdb->posts
 			WHERE post_type = %s
-			ORDER BY post_date DESC
-		", 'attachment' ) );
+			ORDER BY post_date DESC", 'attachment' ) );
         $pre_date='';
         foreach ( $months as $k=>$month_year ) {
             if($pre_date==$month_year->year.$month_year->month){
@@ -431,7 +446,7 @@ class WPP_Hooks{
 	}
 
 
-	public static function wpp_load_options_general() 
+	public static function wpp_load_options_general()
 	{
 		if(get_option('wpp_adminpanel_convert_date')==false && get_option('wpp_frontpage_convert_date'))
 			add_filter("date_i18n", array('WPP_Hooks','wpp_date_i18n'), 10, 4 );
@@ -511,7 +526,6 @@ class WPP_Hooks{
 
 
     public  static function wpp_woocommerce_before_save_order_items($order_id, $items) {
-        //date_default_timezone_set( 'UTC' );
 /*
         $items['order_date']=wpp_numbers_to_english($items['order_date']);
         list( $jyear, $jmonth, $jday ) = explode( '-', $items['order_date'] );
