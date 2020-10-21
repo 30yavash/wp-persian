@@ -46,10 +46,12 @@
 
 .pdp-default .pdp-header{
     background-color: #ffffff;
+    /*
     border-top: 2px solid #999;
     border-left: 1px solid #999;
     border-right: 1px solid #999;
-    border-bottom: none;   
+    border-bottom: none;
+    */
     padding: 2px;
     font-weight: bold;
 }
@@ -66,7 +68,7 @@
 }
 
 .pdp-default .yearSelect, .pdp-default .monthSelect{   
-    font:normal 12px Tahoma;
+    font:normal 11px Tahoma;
     background: #f9f9f9;
     border: 1px solid #ccc;    
     list-style: none;
@@ -132,14 +134,16 @@
     color: #fff;    
 }
 .pdp-default .dow {            
-    font: bold 14px 'helvetica';
+/*    font: bold 14px 'helvetica';*/
     border: 1px solid #5F5D5D;
 }
 
 .pdp-default .days{
     background-color: #ffffff;
+    /*
     border: 1px solid #999;
     border-top: none;
+    */
     font: normal 12px Tahoma;   
 }
 
@@ -194,4 +198,11 @@
 .pdp-default .pdp-footer .goToday:hover{    
     color: #ffffff;
     text-decoration: overline;    
+}
+
+.pdp-default{
+    margin: 0px;
+    border: 1px solid #999;
+    padding: 5px;
+    background-color: white;
 }

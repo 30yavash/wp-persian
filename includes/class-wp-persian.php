@@ -36,6 +36,7 @@ class WP_Persian {
 	    $this->includes();
         $this->adminpanel_locale=get_option( 'wpp_adminpanel_locale' );
         $this->frontpage_locale=get_option( 'wpp_frontpage_locale' );
+        $this->load_plugins();
 	}
 
 	public function includes()
@@ -47,6 +48,10 @@ class WP_Persian {
         include_once(WPP_DIR.'includes/class-wpp-options.php');
         include_once(WPP_DIR.'includes/widgets/class-wpp-widget-jarchive.php');
         include_once(WPP_DIR.'includes/widgets/class-wpp-widget-jcalendar.php');
+    }
+
+    private function load_plugins(){
+        include_once(WPP_DIR . 'plugins/wc-persian/wc-persian.php');
     }
 
 	public function run() {
@@ -95,17 +100,17 @@ class WP_Persian {
             add_filter('media_library_months_with_files', array('WPP_Hooks','wpp_media_library_months_with_files'),10,0 );
             add_filter('ajax_query_attachments_args', array('WPP_Hooks','wpp_ajax_query_attachments_args'),10,1 );
 
-			if ( !empty(get_option( 'wpp_adminpanel_thousands_sep' )) ) {
+			if ( get_option( 'wpp_adminpanel_thousands_sep' ) ) {
 				$wp_locale->number_format['thousands_sep'] = get_option( 'wpp_adminpanel_thousands_sep' );
 			}
-			if ( !empty(get_option( 'wpp_adminpanel_decimal_point' )) ) {
+			if ( get_option( 'wpp_adminpanel_decimal_point' ) ) {
 				$wp_locale->number_format['decimal_point'] = get_option( 'wpp_adminpanel_decimal_point' );
 			}
 		}else {
-			if ( !empty(get_option( 'wpp_frontpage_thousands_sep' )) ) {
+			if ( get_option( 'wpp_frontpage_thousands_sep' ) ) {
 				$wp_locale->number_format['thousands_sep'] = get_option( 'wpp_frontpage_thousands_sep' );
 			}
-			if ( !empty(get_option( 'wpp_frontpage_decimal_point' )) ) {
+			if ( get_option( 'wpp_frontpage_decimal_point' ) ) {
 				$wp_locale->number_format['decimal_point'] = get_option( 'wpp_frontpage_decimal_point' );
 			}
 		}
@@ -322,7 +327,7 @@ class WP_Persian {
 		update_option( 'wpp_frontpage_letters', 1 );
 
 		//adminpanel defaults
-		update_option( 'wpp_adminpanel_locale', 'en_US' );
+		update_option( 'wpp_adminpanel_locale', 'fa_IR' );
 		update_option( 'wpp_adminpanel_convert_date', 1 );
 		update_option( 'wpp_adminpanel_thousands_sep', ',' );
 		update_option( 'wpp_adminpanel_decimal_point', '.' );
@@ -337,6 +342,12 @@ class WP_Persian {
 		update_option( 'wpp_adminpanel_numbers_date_i18n', 1 );
 		update_option( 'wpp_adminpanel_letters', 1 );
 		update_option( 'wpp_adminpanel_numbers_format_i18n', 0 );
+
+        update_option( 'wpp_adminpanel_font_main', 'Vazir' );
+        update_option( 'wpp_adminpanel_font_h', 'Vazir' );
+        update_option( 'wpp_adminpanel_font_nav', 'Vazir' );
+
+        update_option( 'wpp_adminpanel_datepicker', 1 );
 
 		update_option( 'wpp_installed_version', $this->version );
 

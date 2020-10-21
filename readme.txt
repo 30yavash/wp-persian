@@ -3,38 +3,21 @@ Contributors: salemi
 Donate link: https://zarinp.al/22741
 Tags: persian, farsi, jalali, date, calendar, iran, ltr, rtl, woocommerce, shamsi, فارسی, تقویم, شمسی, هجری شمسی, افزونه, جلالی, میلادی, پارسی, ایران, ووکامرس, فروشگاه
 Requires at least: 4.0
-Tested up to: 4.9.6
-Stable tag: 3.2.0
+Tested up to: 5.2.1
+Stable tag: 3.2.5
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Fast and Powerful plugin for Jalali calendar and Farsi language support in Wordpress and standard plugins.
 
 == Description ==
-
 WP-Persian is a fast and powerful plugin for jalali calendar and persian language support in wordpress and standard plugins.
 
 > If you like the plugin, feel free to rate it (on the right side of this page)!
 
-Related Links:
-
-* <a href="http://www.30yavash.com/tag/wp-persian/" title="Farsi Online Documents">Online Documents</a>
-* <a href="https://plugins.svn.wordpress.org/wp-persian/assets/help.pdf" title="Farsi Help">PDF Document</a>
-* <a href="https://plugins.svn.wordpress.org/wp-persian/assets/install.pdf" title="Farsi Installation Help">PDF Installation Help</a>
-* <a href="https://youtu.be/4BIaH5_y-u8" title="Video Demo on Youtube">Video Demo</a>
-
-
-= Farsi Description =
-* تاریخ هجری شمسی در همه بخش ها حتی بخش آپلود عکس و مدیا
-* تشخیص خودکار جهت متن ورودی در بخش مدیریت
-* قابلیت تبدیل کلیه تاریخ های میلادی به هجری شمسی
-* امکان تغییر زبان و تقویم بخش مدیریت و بخش کاربری به صورت مجزا‬
-* به همراه راهنمای کامل تنظیمات به زبان فارسی
-* بدون ایجاد تغییرات در هسته وردپرس
-
-
 = Features =
 * Jalali DatePicker for Woocommerce
+* Farsi Fonts for Admin Dashboard
 * Full posts and comments dates conversion to jalali.
 * Customizable through specific Wordpress admin page.
 * Jalali timestamp edit in new post and new page sections.
@@ -45,14 +28,44 @@ Related Links:
 * Jalali Calendar widget.
 * Jalali/Gregorian compatible permalinks.
 
-== Installation ==
 
+= Farsi Description =
+* امکان تغییر فونت بخش مدیریت سایت
+* پشتیبانی از تاریخ هجری شمسی در ووکامرس
+* تاریخ هجری شمسی در همه بخش ها حتی بخش آپلود عکس و مدیا
+* تشخیص خودکار جهت متن ورودی در بخش مدیریت
+* قابلیت تبدیل کلیه تاریخ های میلادی به هجری شمسی
+* امکان تغییر زبان و تقویم بخش مدیریت و بخش کاربری به صورت مجزا‬
+* به همراه راهنمای کامل تنظیمات به زبان فارسی
+* بدون ایجاد تغییرات در هسته وردپرس
+
+
+= Related Links =
+* <a href="https://bitbucket.org/30yavash/wp-persian/downloads/" title="Download Beta Version">Download Latest Version</a>
+* <a href="http://www.30yavash.com/tag/wp-persian/" title="Farsi Online Documents">Online Documents</a>
+* <a href="https://plugins.svn.wordpress.org/wp-persian/assets/help.pdf" title="Farsi Help">PDF Document</a>
+* <a href="https://plugins.svn.wordpress.org/wp-persian/assets/install.pdf" title="Farsi Installation Help">PDF Installation Help</a>
+
+== Installation ==
 1. Upload the plugin files to the `/wp-content/plugins/wp-persian` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Use the Settings->Persian screen to configure the plugin
 
 == Changelog ==
-= 3.2.0 (June 9th,2018)=
+= 3.2.5 (July 19th,2018)=
+* (UPDATE) update farsi language repository
+
+= 3.2.3 (July 19th,2018)=
+* (FIX) bugfix in conflict with other farsi plugins
+
+= 3.2.2 (July 1st,2018)=
+* (FIX) bugfix in woocommerce date
+
+= 3.2.1 (June 29th,2018)=
+* (NEW) change adminpanel fonts
+* (NEW) datepicker as option in adminpanel settings
+
+= 3.2.0 (June 21th,2018)=
 * (NEW) jalali datepicker for woocommerce
 
 = 3.1.0 (May 21th,2018) =
@@ -116,11 +129,13 @@ use can use English or Persian version of Wordpress.but we suggest english versi
 
 == Screenshots ==
 
-
-1. TinyMCE Editor RTL , LTR Buttons
-2. Quick Edit Post
-3. Wordpress Frontpage settings
-4. Wordpress Administrator Panel settings
-5. General Settings in Administrator Panel
-6. Jalali Calendar Widget
-7. Jalali Archive Widget
+1. Woocommerce Product Jalali Date Picker
+2. Woocommerce Order Jalali Date Picker
+3. Wordpress General Settings
+4. WP-Persian Administrator dashboard Settings
+5. WP-Persian Frontpage Settings
+6. Wordpress All Posts
+7. Wordpress Edit Post
+8. Wordpress Post Quick Edit
+9. Jalali Calendar Widget
+10. Jalali Archive Widget

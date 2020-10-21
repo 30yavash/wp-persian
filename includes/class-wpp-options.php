@@ -143,7 +143,31 @@ class WPP_Options {
 			"wppo_adminpanel_section"
 		);
 
-		register_setting( "wppo_adminpanel_section", "wpp_adminpanel_locale", array(
+        add_settings_field(
+            "wpp_fonts",
+            __( "Fonts", 'wp-persian' ),
+            array(
+                $this,
+                'element_adminpanel_fonts'
+            ),
+            "wppo_adminpanel_page",
+            "wppo_adminpanel_section"
+        );
+
+
+        add_settings_field(
+            "wpp_adminpanel_datepicker",
+            __( "Calendar", 'wp-persian' ),
+            array(
+                $this,
+                'element_adminpanel_datepicker'
+            ),
+            "wppo_adminpanel_page",
+            "wppo_adminpanel_section"
+        );
+
+
+        register_setting( "wppo_adminpanel_section", "wpp_adminpanel_locale", array(
 			$this,
 			"validate_locale"
 		) );
@@ -162,6 +186,12 @@ class WPP_Options {
 		register_setting( "wppo_adminpanel_section", "wpp_adminpanel_thousands_sep" );
 		register_setting( "wppo_adminpanel_section", "wpp_adminpanel_decimal_point" );
 		register_setting( "wppo_adminpanel_section", "wpp_adminpanel_numbers_format_i18n" );
+
+        register_setting( "wppo_adminpanel_section", "wpp_adminpanel_font_main" );
+        register_setting( "wppo_adminpanel_section", "wpp_adminpanel_font_h" );
+        register_setting( "wppo_adminpanel_section", "wpp_adminpanel_font_nav" );
+
+        register_setting( "wppo_adminpanel_section", "wpp_adminpanel_datepicker" );
 
 
 		//Section1 - Frontpage
@@ -241,7 +271,29 @@ class WPP_Options {
 		register_setting( "wppo_frontpage_section", "wpp_frontpage_letters" );
 		register_setting( "wppo_frontpage_section", "wpp_frontpage_thousands_sep" );
 		register_setting( "wppo_frontpage_section", "wpp_frontpage_decimal_point" );
-	}
+
+
+
+        //Section3 - Plugins
+        add_settings_section(
+            "wppo_plugins_section",                //sectionID
+            __( "Plugins", 'wp-persian' ),
+            null,
+            "wppo_plugins_page"                    //page
+        );
+
+        add_settings_field(
+            "wpp_plugins_active_plugins",
+            __( "Active Plugins", 'wp-persian' ),
+            array(
+                $this,
+                'element_plugins_list'
+            ),
+            "wppo_plugins_page",                  //page
+            "wppo_plugins_section"                //sectionID
+        );
+
+    }
 
 	public function validate_locale( $input ) {
 		if ( ! isset( $input ) || empty( $input ) ) {
@@ -250,6 +302,25 @@ class WPP_Options {
 
 		return $input;
 	}
+
+    public function element_adminpanel_datepicker() {
+        ?>
+        <label for="wpp_adminpanel_datepicker">
+            <input name="wpp_adminpanel_datepicker" type="checkbox" id="wpp_adminpanel_datepicker"
+                   value="1" <?php checked( get_option( 'wpp_adminpanel_datepicker' ), 1, true ) ?>><?php _e( 'Enable Date Picker Calendar', 'wp-persian' ) ?>
+        </label>
+        <?php
+    }
+
+
+    public function element_plugins_list() {
+        ?>
+        <label for="wpp_plugin_woocommerce">
+            <input name="wpp_plugin_woocommerce" type="checkbox" id="wpp_plugin_woocommerce"
+                   value="1" <?php checked( get_option( 'wpp_plugin_woocommerce' ), 1, true ) ?>><?php _e( 'Enable Woocommerce Jalali Date Converter', 'wp-persian' ) ?>
+        </label>
+        <?php
+    }
 
 	public function element_adminpanel_context() {
 		?>
@@ -284,7 +355,49 @@ class WPP_Options {
 		<?php
 	}
 
-	public function element_adminpanel_locale() {
+    public function element_adminpanel_fonts() {
+        ?>
+        <label for="wpp_adminpanel_font_main">
+        <select name="wpp_adminpanel_font_main" id="wpp_adminpanel_font_main">
+            <option value="Segoe UI" <?php selected( get_option( 'wpp_adminpanel_font_main' ), 'Segoe UI', true ) ?>>Segoe UI</option>
+            <option value="Tahoma" <?php selected( get_option( 'wpp_adminpanel_font_main' ), 'Tahoma', true ) ?>>Tahoma</option>
+            <option value="Vazir" <?php selected( get_option( 'wpp_adminpanel_font_main' ), 'Vazir', true ) ?>>Vazir</option>
+            <option value="Samim" <?php selected( get_option( 'wpp_adminpanel_font_main' ), 'Samim', true ) ?>>Samim</option>
+            <option value="Shabnam" <?php selected( get_option( 'wpp_adminpanel_font_main' ), 'Shabnam', true ) ?>>Shabnam</option>
+            <option value="Sahel" <?php selected( get_option( 'wpp_adminpanel_font_main' ), 'Sahel', true ) ?>>Sahel</option>
+            <option value="Nahid" <?php selected( get_option( 'wpp_adminpanel_font_main' ), 'Nahid', true ) ?>>Nahid</option>
+            <option value="Tanha" <?php selected( get_option( 'wpp_adminpanel_font_main' ), 'Tanha', true ) ?>>Tanha</option>
+        </select> <?php _e('As main font','wp-persian') ?>
+        </label><br />
+
+<label for="wpp_adminpanel_font_h">
+        <select name="wpp_adminpanel_font_h" id="wpp_adminpanel_font_h">
+            <option value="Segoe UI" <?php selected( get_option( 'wpp_adminpanel_font_h' ), 'Segoe UI', true ) ?>>Segoe UI</option>
+            <option value="Tahoma" <?php selected( get_option( 'wpp_adminpanel_font_h' ), 'Tahoma', true ) ?>>Tahoma</option>
+            <option value="Vazir" <?php selected( get_option( 'wpp_adminpanel_font_h' ), 'Vazir', true ) ?>>Vazir</option>
+            <option value="Samim" <?php selected( get_option( 'wpp_adminpanel_font_h' ), 'Samim', true ) ?>>Samim</option>
+            <option value="Shabnam" <?php selected( get_option( 'wpp_adminpanel_font_h' ), 'Shabnam', true ) ?>>Shabnam</option>
+            <option value="Sahel" <?php selected( get_option( 'wpp_adminpanel_font_h' ), 'Sahel', true ) ?>>Sahel</option>
+            <option value="Nahid" <?php selected( get_option( 'wpp_adminpanel_font_h' ), 'Nahid', true ) ?>>Nahid</option>
+            <option value="Tanha" <?php selected( get_option( 'wpp_adminpanel_font_h' ), 'Tanha', true ) ?>>Tanha</option>
+        </select> <?php _e('As header font','wp-persian') ?>
+</label><br />
+<label for="wpp_adminpanel_font_nav">
+        <select name="wpp_adminpanel_font_nav" id="wpp_adminpanel_font_nav">
+            <option value="Segoe UI" <?php selected( get_option( 'wpp_adminpanel_font_nav' ), 'Segoe UI', true ) ?>>Segoe UI</option>
+            <option value="Tahoma" <?php selected( get_option( 'wpp_adminpanel_font_nav' ), 'Tahoma', true ) ?>>Tahoma</option>
+            <option value="Vazir" <?php selected( get_option( 'wpp_adminpanel_font_nav' ), 'Vazir', true ) ?>>Vazir</option>
+            <option value="Samim" <?php selected( get_option( 'wpp_adminpanel_font_nav' ), 'Samim', true ) ?>>Samim</option>
+            <option value="Shabnam" <?php selected( get_option( 'wpp_adminpanel_font_nav' ), 'Shabnam', true ) ?>>Shabnam</option>
+            <option value="Sahel" <?php selected( get_option( 'wpp_adminpanel_font_nav' ), 'Sahel', true ) ?>>Sahel</option>
+            <option value="Nahid" <?php selected( get_option( 'wpp_adminpanel_font_nav' ), 'Nahid', true ) ?>>Nahid</option>
+            <option value="Tanha" <?php selected( get_option( 'wpp_adminpanel_font_nav' ), 'Tanha', true ) ?>>Tanha</option>
+
+        </select> <?php _e('As navigation font','wp-persian') ?></label>
+        <?php
+    }
+
+    public function element_adminpanel_locale() {
 		$languages    = get_available_languages();
 		$translations = wp_get_available_translations();
 		if ( ! is_multisite() && defined( 'WPLANG' ) && '' !== WPLANG && 'en_US' !== WPLANG && ! in_array( WPLANG, $languages ) ) {
@@ -525,6 +638,10 @@ class WPP_Options {
 				   class="nav-tab <?php echo $active_tab == 'frontpage' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Frontpage', 'wp-persian' ); ?></a>
 				<a href="?page=wpp-options&tab=adminpanel"
 				   class="nav-tab <?php echo $active_tab == 'adminpanel' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Adminpanel', 'wp-persian' ); ?></a>
+                <?php /* ?>
+                <a href="?page=wpp-options&tab=plugins"
+                   class="nav-tab <?php echo $active_tab == 'plugins' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Plugins', 'wp-persian' ); ?></a>
+                <?php */ ?>
 			</h2>
 			<form method="post" action="options.php">
 				<?php
@@ -533,7 +650,15 @@ class WPP_Options {
 					settings_fields( "wppo_adminpanel_section" );
 					do_settings_sections( "wppo_adminpanel_page" );
 
-				} else {
+				}
+				/*
+				else if ( 'plugins' == $active_tab ) {
+                    settings_fields( "wppo_plugins_section" );
+                    do_settings_sections( "wppo_plugins_page" );
+
+                }
+                */
+                else {
 					settings_fields( "wppo_frontpage_section" );
 					do_settings_sections( "wppo_frontpage_page" );
 				}

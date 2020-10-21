@@ -7,7 +7,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-require_once(WPP_DIR.'includes/jdf.php');
+require_once(WPP_DIR.'includes/class-wpp-jdate.php');
 
 /**
  *
@@ -41,7 +41,7 @@ function wpp_jdate( $format , $time  , $tr_num='') {
     //error_log('timezone='.$time_zone);
     //$time_zone = 'UTC';
     //$tr_num='en';
-    return jdate( $format, $timestamp, '', $time_zone, $tr_num );
+    return WPP_JDate::jdate( $format, $timestamp, '', $time_zone, $tr_num );
 }
 
 
@@ -51,32 +51,32 @@ function wpp_jdate( $format , $time  , $tr_num='') {
  * @return string
  */
 function wpp_jmonth_name($jmonth) {
-    return jdate_words( array( 'mm' => (int) $jmonth ) )['mm'];
+    return WPP_JDate::jdate_words( array( 'mm' => (int) $jmonth ) )['mm'];
 }
 
 
 function wpp_jweekday_abbrev($jmonth) {
-    return jdate_words( array( 'km' => (int) $jmonth ) )['km'];
+    return WPP_JDate::jdate_words( array( 'km' => (int) $jmonth ) )['km'];
 }
 
 
 function wpp_jweekday_initial($jmonth) {
-    return jdate_words( array( 'kh' => (int) $jmonth ) )['kh'];
+    return WPP_JDate::jdate_words( array( 'kh' => (int) $jmonth ) )['kh'];
 }
 
 
 function wpp_jalali_to_gregorian($j_y,$j_m,$j_d) {
-    return jalali_to_gregorian( $j_y, $j_m, $j_d );
+    return WPP_JDate::jalali_to_gregorian( $j_y, $j_m, $j_d );
 }
 
 
 function wpp_gregorian_to_jalali($g_y,$g_m,$g_d) {
-    return gregorian_to_jalali( $g_y, $g_m, $g_d );
+    return WPP_JDate::gregorian_to_jalali( $g_y, $g_m, $g_d );
 }
 
 
 function wpp_jmktime($hour , $minute , $second , $month , $day , $year) {
-    return jmktime( $hour, $minute, $second, $month, $day, $year );
+    return WPP_JDate::jmktime( $hour, $minute, $second, $month, $day, $year );
 
 }
 
